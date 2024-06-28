@@ -1,22 +1,28 @@
-import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-import SignInScreen from './screens/SignInScreen';
-import LoginScreen from './screens/LoginScreen';
-import ForgotPasswordScreen from './screens/ForgotPasswordScreen';
+// Rest of the import statements
+import { useFonts } from 'expo-font';
+import {Text, View } from 'react-native';
 
-const Stack = createStackNavigator();
+export default function App() {
+  const [dapatFont] = useFonts({
+    'MetroBlack': require('./assets/fonts/Metropolis-Black.otf'),
+    'MetroBold': require('./assets/fonts/Metropolis-Bold.otf'),
+    'MetroLight': require('./assets/fonts/Metropolis-Light.otf'),
+    'MetroMedium': require('./assets/fonts/Metropolis-Medium.otf'),
+    'MetroSemiBold': require('./assets/fonts/Metropolis-SemiBold.otf'),
+  });
 
-function App() {
+  if(!dapatFont) {
+    return <Text>Font tidak dutemukan</Text>
+
+  }
   return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="SignIn">
-        <Stack.Screen name="SignIn" component={SignInScreen} />
-        <Stack.Screen name="Login" component={LoginScreen} />
-        <Stack.Screen name="ForgotPassword" component={ForgotPasswordScreen} />
-      </Stack.Navigator>
-    </NavigationContainer>
-  );
+    <View style={{ flex: 1, justifyContent: "center", alignItems: "center"}}>
+      <Text style={{ fontFamily: 'MetroBlack' }}>Font Metropolis Black</Text>
+      <Text style={{ fontFamily: 'MetroBold' }}>Font Metropolis Bold</Text>
+      <Text style={{ fontFamily: 'MetroLight' }}>Font Metropolis Light</Text>
+      <Text style={{ fontFamily: 'MetroMedium' }}>Font Metropolis Medium</Text>
+      <Text style={{ fontFamily: 'MetroSemiBold' }}>Font Metropolis SemiBold</Text>
+      <Text>Font Biasa</Text>
+    </View>
+  )
 }
-
-export default App;
