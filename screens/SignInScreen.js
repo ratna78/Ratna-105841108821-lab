@@ -72,6 +72,7 @@ input: {
   borderWidth: 1,
   borderColor: '#ccc',
   borderRadius: 5,
+ 
 },
 signUpText: {
   marginTop: 10,

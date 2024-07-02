@@ -52,6 +52,7 @@ const styles = StyleSheet.create({
 title: {
   fontSize: 24,
   marginBottom: 20,
+  
 },
 input: {
   width: '50%',
@@ -60,7 +61,7 @@ input: {
   borderWidth: 1,
   borderColor: '#ccc',
   borderRadius: 5,
-
+ 
 
 },
 forgotPasswordText: {
